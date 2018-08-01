@@ -1,7 +1,7 @@
-# Fagri
+# Jinsy
 
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.5
+**Tested up to:** WordPress 4.9.7
 **Stable tag:** 1.0.1  
 **Version:** 1.0.0  
 **License:** GNU General Public License v2 or later  
@@ -10,7 +10,7 @@
 
 ## Description
 
-Fagri is a responsive WordPress theme, built to fit all kinds of businesses. Its multipurpose design is great for small businesses, startups, corporate businesses, freelancers, portfolios, WooCommerce, creative agencies, or niche websites (medical, restaurants, sports, fashion). Fagri was created on top of Now UI Kit and displays an elegant one-page layout, complemented by the smooth parallax effect. The theme comes with a clean look, but it also provides subtle hover animations. Moreover, Fagri offers Sendinblue newsletter integration, a flexible interface via Live Customizer, a widgetized footer, full compatibility with Elementor and Beaver Builder, a full-width featured slider, and even more functionality based on the latest WordPress trends. Last but not least, the theme is lightweight and SEO-friendly.
+Jinsy is a responsive WordPress theme, built to fit all kinds of businesses. Its multipurpose design is great for small businesses, startups, corporate businesses, freelancers, portfolios, WooCommerce, creative agencies, or niche websites (medical, restaurants, sports, fashion). Jinsy was created on top of Now UI Kit and displays an elegant one-page layout, complemented by the smooth parallax effect. The theme comes with a clean look, but it also provides subtle hover animations. Moreover, Jinsy offers Sendinblue newsletter integration, a flexible interface via Live Customizer, a widgetized footer, full compatibility with Elementor and Beaver Builder, a full-width featured slider, and even more functionality based on the latest WordPress trends. Last but not least, the theme is lightweight and SEO-friendly.
 
 ## Frequently Asked Questions
 
@@ -23,10 +23,10 @@ Fagri is a responsive WordPress theme, built to fit all kinds of businesses. Its
 
 ## Copyright
 
-Fagri WordPress Theme is a child theme of Hestia WordPress Theme, Copyright 2018 Themeisle
-Fagri Wordpress Theme is distributed under the terms of the GNU GPL
+Jinsy WordPress Theme is a child theme of Hestia WordPress Theme, Copyright 2018 Themeisle
+Jinsy Wordpress Theme is distributed under the terms of the GNU GPL
 
-Fagri bundles the following third-party resources:
+Jinsy bundles the following third-party resources:
 
 ### Scripts
 Bootstrap, http://getbootstrap.com/ Copyright 2011-2015 Twitter, Inc  
@@ -38,6 +38,4 @@ Source: http://www.opensource.org/licenses/MIT
 License: All mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/  
 
 **Images used:**
-- http://mystock.photos/photo/glass-building-2/
-- http://mystock.photos/photo/trump-tower/
-- http://mystock.photos/photo/light-waves/
+
