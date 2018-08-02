@@ -27,6 +27,15 @@ if ( ! function_exists( 'jinsy_parent_css' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'jinsy_parent_css', 10 );
 
+/* Enqueue files */
+if ( file_exists( get_stylesheet_directory() . '/inc/customizer/customizer.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/customizer/customizer.php';
+}
+
+if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/inline-style.php';
+}
+
 /**
  * Import options from Hestia
  *
