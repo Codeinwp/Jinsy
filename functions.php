@@ -27,14 +27,14 @@ if ( ! function_exists( 'jinsy_parent_css' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'jinsy_parent_css', 10 );
 
-/* Enqueue files */
-if ( file_exists( get_stylesheet_directory() . '/inc/customizer/customizer.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/customizer/customizer.php';
+/**
+ * TODO: this should be deleted after fixing child themes with JS and CSS minification
+ */
+function tmp_enqueue_child_style() {
+	/* TODO: this should be deleted after fixing child themes with JS and CSS minification */
+	wp_enqueue_style( 'jinsy_style', trailingslashit( get_stylesheet_directory_uri() ) . 'style.css' );
 }
-
-if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/inline-style.php';
-}
+add_action( 'wp_enqueue_scripts', 'tmp_enqueue_child_style', 20 );
 
 /**
  * Import options from Hestia
@@ -93,6 +93,7 @@ function jinsy_about_page_filter( $old_value, $parameter ) {
 			break;
 		case 'welcome_content':
 		case 'pro_welcome_content':
+			/* TODO: update description */
 			$return = esc_html__( 'jinsy is a responsive WordPress theme, built to fit all kinds of businesses. Its multipurpose design is great for small businesses, startups, corporate businesses, freelancers, portfolios, WooCommerce, creative agencies, or niche websites (medical, restaurants, sports, fashion). jinsy was created on top of Now UI Kit and displays an elegant one-page layout, complemented by the smooth parallax effect. The theme comes with a clean look, but it also provides subtle hover animations. Moreover, jinsy offers Sendinblue newsletter integration, a flexible interface via Live Customizer, a widgetized footer, full compatibility with Elementor and Beaver Builder, a full-width featured slider, and even more functionality based on the latest WordPress trends. Last but not least, the theme is lightweight and SEO-friendly.', 'jinsy' );
 			break;
 		default:
