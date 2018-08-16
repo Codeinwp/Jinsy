@@ -28,15 +28,6 @@ endif;
 add_action( 'wp_enqueue_scripts', 'jinsy_parent_css', 10 );
 
 /**
- * TODO: this should be deleted after fixing child themes with JS and CSS minification
- */
-function tmp_enqueue_child_style() {
-	/* TODO: this should be deleted after fixing child themes with JS and CSS minification */
-	wp_enqueue_style( 'jinsy_style', trailingslashit( get_stylesheet_directory_uri() ) . 'style.css' );
-}
-add_action( 'wp_enqueue_scripts', 'tmp_enqueue_child_style', 20 );
-
-/**
  * Import options from Hestia
  *
  * @since 1.0.0
