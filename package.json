@@ -1,25 +1,25 @@
 {
-  "name": "jinsy",
-  "nicename": "Jinsy",
+  "name": "jinsy-magazine",
+  "nicename": "Jinsy Magazine",
   "version": "1.0.0",
   "category": "themes",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Codeinwp/jinsy.git"
+    "url": "git+https://github.com/Codeinwp/jinsy-magazine.git"
   },
   "keywords": [
     "wordpress-theme"
   ],
   "theme": {
-    "textdomain": "jinsy"
+    "textdomain": "jinsy-magazine"
   },
   "author": "ThemeIsle <friends@themeisle.com>",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/Codeinwp/jinsy/issues"
+    "url": "https://github.com/Codeinwp/jinsy-magazine/issues"
   },
   "pot": {
-    "reportmsgidbugsto": "https://github.com/Codeinwp/jinsy/issues",
+    "reportmsgidbugsto": "https://github.com/Codeinwp/jinsy-magazine/issues",
     "languageteam": "Themeisle Translate <friends@themeisle.com>",
     "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
   },
@@ -33,6 +33,6 @@
     "load-project-config": "~0.2.0"
   },
   "wraithSlug": [
-    "jinsy"
+    "jinsy-magazine"
   ]
 }

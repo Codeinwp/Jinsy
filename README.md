@@ -1,4 +1,4 @@
-# Jinsy
+# Jinsy Magazine
 
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.9.7
@@ -23,10 +23,10 @@ Jinsy Magazine is a multipurpose WordPress theme built on Argon design. The them
 
 ## Copyright
 
-Jinsy WordPress Theme is a child theme of Hestia WordPress Theme, Copyright 2018 Themeisle
-Jinsy Wordpress Theme is distributed under the terms of the GNU GPL
+Jinsy Magazine WordPress Theme is a child theme of Hestia WordPress Theme, Copyright 2018 Themeisle
+Jinsy Magazine Wordpress Theme is distributed under the terms of the GNU GPL
 
-Jinsy bundles the following third-party resources:
+Jinsy Magazine bundles the following third-party resources:
 
 ### Scripts
 Bootstrap, http://getbootstrap.com/ Copyright 2011-2015 Twitter, Inc  
