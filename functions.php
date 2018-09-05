@@ -61,6 +61,31 @@ function jinsy_magazine_boxed_layout_default() {
 add_action( 'after_switch_theme', 'jinsy_magazine_boxed_layout_default' );
 
 /**
+ * Default padding for buttons styling
+ */
+function jinsy_magazine_button_padding_dimension_default() {
+	return  json_encode(
+		array(
+			'desktop' => json_encode(
+				array(
+					'desktop_vertical'   => 10,
+					'desktop_horizontal' => 20,
+				)
+			),
+		)
+	);
+}
+add_filter( 'hestia_button_padding_dimensions_default', 'jinsy_magazine_button_padding_dimension_default' );
+
+/**
+ * Default border-radius for buttons styling
+ */
+function jinsy_magazine_buttons_border_radius_default() {
+	return 4;
+}
+add_filter( 'hestia_buttons_border_radius_default', 'jinsy_magazine_buttons_border_radius_default' );
+
+/**
  * Import options from Hestia
  *
  * @since 1.0.0
