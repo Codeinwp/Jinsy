@@ -10,15 +10,23 @@ $social-networks-icons: '\f09a' '\f099' '\f231' '\f1a0' '\f0e1' '\f17d' '\f09b' 
     background-color: $color;
     border-radius: 50%;
     margin-right: 5px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 
     i.fa {
       font-size: 14px;
     }
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)
+    }
   }
 }
 
-// Generate for each social network specific buttons code
-@each $current-social in $social-networks {
-  $i: index($social-networks, $current-social);
-  @include footer-buttons-social-icon($current-social,nth($social-networks-colors,$i));
+@media (min-width: 769px) {
+  // Generate for each social network specific buttons code
+  @each $current-social in $social-networks {
+    $i: index($social-networks, $current-social);
+    @include footer-buttons-social-icon($current-social,nth($social-networks-colors,$i));
+  }
 }
