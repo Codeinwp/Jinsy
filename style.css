@@ -15,5 +15,236 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 */
+/*--------------------------------------------------------------
+## Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Generic
+--------------------------------------------------------------*/
+/* Square social icons on single post page instead of round icons */
+.single-post .btn.btn-just-icon,
+.single-post .btn.btn-just-icon.btn-round {
+  border-radius: 5px;
+}
+.single-post .btn.btn-just-icon i,
+.single-post .btn.btn-just-icon.btn-round i {
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+## Categories
+--------------------------------------------------------------*/
+.single-post .entry-categories .label {
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 10.5px;
+  border-radius: 30px;
+  padding: 6px 9px;
+}
+.single-post .entry-categories .label:nth-of-type(5n+1) {
+  background-color: rgba(203, 210, 246, 0.5);
+}
+.single-post .entry-categories .label:nth-of-type(5n+1) a {
+  color: #2643e9;
+}
+.single-post .entry-categories .label:nth-of-type(5n+2) {
+  background-color: rgba(147, 231, 195, 0.5);
+}
+.single-post .entry-categories .label:nth-of-type(5n+2) a {
+  color: #1aae6f;
+}
+.single-post .entry-categories .label:nth-of-type(5n+3) {
+  background-color: rgba(251, 175, 190, 0.5);
+}
+.single-post .entry-categories .label:nth-of-type(5n+3) a {
+  color: #f80031;
+}
+.single-post .entry-categories .label:nth-of-type(5n+4) {
+  background-color: rgba(255, 214, 0, 0.5);
+}
+.single-post .entry-categories .label:nth-of-type(5n+4) a {
+  color: #ffd600;
+}
+.single-post .entry-categories .label:nth-of-type(5n+5) {
+  background-color: rgba(136, 230, 247, 0.5);
+}
+.single-post .entry-categories .label:nth-of-type(5n+5) a {
+  color: #03acca;
+}
+
+/*--------------------------------------------------------------
+## Menu
+--------------------------------------------------------------*/
+.navbar-transparent li:not(.btn):not(.dropdown-submenu) > ul.dropdown-menu:before {
+  position: absolute;
+  z-index: -5;
+  bottom: 98%;
+  left: 20px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  content: '';
+  transform: rotate(-45deg) translateY(1rem);
+  border-radius: .2rem;
+  background: #fff;
+  box-shadow: none;
+}
+
+/*--------------------------------------------------------------
+## Sections
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Team
+--------------------------------------------------------------*/
+.hestia-team .footer a[href*="facebook.com"] {
+  color: #ffffff;
+  background-color: #3b5998;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="facebook.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="twitter.com"] {
+  color: #ffffff;
+  background-color: #55acee;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="twitter.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="pinterest.com"] {
+  color: #ffffff;
+  background-color: #cc2127;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="pinterest.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="google.com"] {
+  color: #ffffff;
+  background-color: #dd4b39;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="google.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="linkedin.com"] {
+  color: #ffffff;
+  background-color: #0976b4;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="linkedin.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="dribbble.com"] {
+  color: #ffffff;
+  background-color: #ea4c89;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="dribbble.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="github.com"] {
+  color: #ffffff;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="github.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="youtube.com"] {
+  color: #ffffff;
+  background-color: #e52d27;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="youtube.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="instagram.com"] {
+  color: #ffffff;
+  background-color: #125688;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="instagram.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="reddit.com"] {
+  color: #ffffff;
+  background-color: #ff4500;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="reddit.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="tumblr.com"] {
+  color: #ffffff;
+  background-color: #35465c;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="tumblr.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="behance.com"] {
+  color: #ffffff;
+  background-color: #1769ff;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="behance.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="snapchat.com"] {
+  color: #ffffff;
+  background-color: #fffc00;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="snapchat.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="deviantart.com"] {
+  color: #ffffff;
+  background-color: #05cc47;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="deviantart.com"] i.fa {
+  font-size: 14px;
+}
+
+.hestia-team .footer a[href*="vimeo.com"] {
+  color: #ffffff;
+  background-color: #1ab7ea;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.hestia-team .footer a[href*="vimeo.com"] i.fa {
+  font-size: 14px;
+}
 
 /*# sourceMappingURL=style.css.map */
