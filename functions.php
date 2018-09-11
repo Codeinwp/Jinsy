@@ -91,12 +91,28 @@ add_filter( 'hestia_buttons_border_radius_default', 'jinsy_magazine_buttons_bord
  * @since 1.0.0
  */
 function jinsy_magazine_import_hestia_options() {
-	$hestia_mods = get_option( 'theme_mods_hestia' );
-	if ( ! empty( $hestia_mods ) ) {
-		foreach ( $hestia_mods as $hestia_mod_k => $hestia_mod_v ) {
-			set_theme_mod( $hestia_mod_k, $hestia_mod_v );
-		}
+
+	$previous_theme = strtolower( get_option( 'theme_switched' ) );
+	$child_template = wp_get_theme()->Template;
+
+	if ( $previous_theme !== $child_template ) {
+		return;
 	}
+
+	$allowed_themes = array( 'hestia', 'hestia-pro' );
+	if ( ! in_array( $previous_theme, $allowed_themes ) ) {
+		return;
+	}
+
+	$hestia_mods = get_option( 'theme_mods_' . $child_template );
+	if ( empty( $hestia_mods ) ) {
+		return;
+	}
+
+	foreach ( $hestia_mods as $hestia_mod_k => $hestia_mod_v ) {
+		set_theme_mod( $hestia_mod_k, $hestia_mod_v );
+	}
+
 }
 add_action( 'after_switch_theme', 'jinsy_magazine_import_hestia_options' );
 
