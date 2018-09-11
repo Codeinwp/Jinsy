@@ -114,6 +114,78 @@ function jinsy_magazine_parallax_layer2_default() {
 add_action( 'hestia_parallax_layer2_default', 'jinsy_magazine_parallax_layer2_default' );
 
 /**
+ * Customizer controls
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * @since 1.0.0
+ */
+function jinsy_magazine_customize_register( $wp_customize ) {
+
+	/* Jinsy Options Panel */
+	$wp_customize->add_panel(
+		'jinsy_magazine_options',
+		array(
+			'priority' => 50,
+			'title'    => esc_html__( 'Jinsy Options', 'jinsy-magazine' ),
+		)
+	);
+	/* Blog section */
+	$wp_customize->add_section(
+		'jinsy_magazine_blog',
+		array(
+			'priority' => 5,
+			'title'    => esc_html__( 'Blog options', 'jinsy-magazine' ),
+			'panel'    => 'jinsy_magazine_options',
+		)
+	);
+	/* Magazine layout control */
+	$wp_customize->add_setting(
+		'jinsy_magazine_magazine_layout',
+		array(
+			'default' => true,
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'jinsy_magazine_magazine_layout',
+			array(
+				'label'   => __( 'Enable Magazine Layout', 'jinsy-magazine' ),
+				'section' => 'jinsy_magazine_blog',
+				'type'    => 'checkbox',
+			)
+		)
+	);
+
+}
+add_action( 'customize_register', 'jinsy_magazine_customize_register', 10 );
+
+/**
+ * Magazine layout
+ */
+function jinsy_magazine_enable_magazine_layout() {
+
+	$previous_blog_layout   = get_theme_mod( 'hestia_alternative_blog_layout' );
+	$enable_magazine_layout = get_theme_mod( 'jinsy_magazine_magazine_layout', true );
+
+	if ( $enable_magazine_layout ) {
+		set_theme_mod( 'hestia_alternative_blog_layout', 'blog_alternative_layout2' );
+		set_theme_mod( 'hestia_grid_layout', 3 );
+		set_theme_mod( 'hestia_enable_masonry', true );
+		set_theme_mod( 'hestia_pagination_type', 'infinite' );
+	} else {
+		remove_theme_mod( 'hestia_alternative_blog_layout' );
+		remove_theme_mod( 'hestia_grid_layout' );
+		remove_theme_mod( 'hestia_enable_masonry' );
+		remove_theme_mod( 'hestia_pagination_type' );
+		set_theme_mod( 'hestia_alternative_blog_layout', 'blog_alternative_layout' );
+	}
+
+}
+add_action( 'init', 'jinsy_magazine_enable_magazine_layout' );
+
+/**
  * Import options from Hestia
  *
  * @since 1.0.0
