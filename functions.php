@@ -86,6 +86,34 @@ function jinsy_magazine_buttons_border_radius_default() {
 add_filter( 'hestia_buttons_border_radius_default', 'jinsy_magazine_buttons_border_radius_default' );
 
 /**
+ * Default background type for Big Title section
+ */
+function jinsy_magazine_big_title_background_default() {
+	set_theme_mod( 'hestia_slider_type', 'parallax' );
+}
+add_action( 'after_switch_theme', 'jinsy_magazine_big_title_background_default' );
+
+/**
+ * Default image for parallax layer1 in Big Title section background
+ *
+ * @return string
+ */
+function jinsy_magazine_parallax_layer1_default() {
+	return get_stylesheet_directory_uri() . '/assets/img/parallax_layer1.jpg';
+}
+add_action( 'hestia_parallax_layer1_default', 'jinsy_magazine_parallax_layer1_default' );
+
+/**
+ * Default image for parallax layer2 in Big Title section background
+ *
+ * @return string
+ */
+function jinsy_magazine_parallax_layer2_default() {
+	return get_stylesheet_directory_uri() . '/assets/img/parallax_layer2.png';
+}
+add_action( 'hestia_parallax_layer2_default', 'jinsy_magazine_parallax_layer2_default' );
+
+/**
  * Import options from Hestia
  *
  * @since 1.0.0
