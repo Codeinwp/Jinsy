@@ -31,6 +31,10 @@ if ( file_exists( get_stylesheet_directory() . '/inc/magazine-layout.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/magazine-layout.php';
 }
 
+if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/inline-style.php';
+}
+
 /**
  * Default accent color
  */
@@ -125,6 +129,16 @@ function jinsy_magazine_parallax_layer2_default() {
 }
 
 add_action( 'hestia_parallax_layer2_default', 'jinsy_magazine_parallax_layer2_default' );
+
+/**
+ * Default color for header overlay
+ *
+ * @return string
+ */
+function jinsy_magazine_header_overlay_color_default() {
+	return 'rgba(0,0,0,0.2)';
+}
+add_action( 'header_overlay_color', 'jinsy_magazine_header_overlay_color_default' );
 
 /**
  * Import options from Hestia
