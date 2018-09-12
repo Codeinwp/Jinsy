@@ -1,6 +1,8 @@
 <?php
 /**
  * Functions for magazine layout
+ *
+ * @package jinsy-magazine
  */
 
 /**
@@ -25,9 +27,9 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 			$wp_customize,
 			'jinsy_magazine_magazine_layout',
 			array(
-				'label'   => __( 'Enable Magazine Layout', 'jinsy-magazine' ),
-				'section' => 'hestia_blog_layout',
-				'type'    => 'checkbox',
+				'label'    => __( 'Enable Magazine Layout', 'jinsy-magazine' ),
+				'section'  => 'hestia_blog_layout',
+				'type'     => 'checkbox',
 				'priority' => 26,
 			)
 		)
@@ -52,7 +54,7 @@ function jinsy_magazine_customize_register( $wp_customize ) {
  * @return bool
  */
 function magazine_layout_active_callback() {
-	if( get_theme_mod( 'jinsy_magazine_magazine_layout', true ) === true ) {
+	if ( get_theme_mod( 'jinsy_magazine_magazine_layout', true ) === true ) {
 		return false;
 	}
 	return true;

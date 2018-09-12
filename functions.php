@@ -141,6 +141,22 @@ function jinsy_magazine_header_overlay_color_default() {
 add_action( 'header_overlay_color', 'jinsy_magazine_header_overlay_color_default' );
 
 /**
+ * Enable scroll to top by default
+ */
+function jinsy_magazine_enable_scroll_to_top() {
+	set_theme_mod( 'hestia_enable_scroll_to_top', true );
+}
+add_action( 'after_switch_theme', 'jinsy_magazine_enable_scroll_to_top' );
+
+/**
+ * Enable very top bar
+ */
+function jinsy_magazine_enable_very_top_bar() {
+	set_theme_mod( 'hestia_top_bar_hide', false );
+}
+add_action( 'after_switch_theme', 'jinsy_magazine_enable_very_top_bar' );
+
+/**
  * Import options from Hestia
  *
  * @since 1.0.0
