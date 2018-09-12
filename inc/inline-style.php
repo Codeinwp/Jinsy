@@ -14,11 +14,6 @@ function jinsy_magazine_inline_style() {
 
 	$custom_css = '';
 
-	$custom_css .= '
-		.header-filter::before {
-            background-color: rgba(0, 0, 0, 0.2);
-		}
-	';
 	if ( ! empty( $accent_color ) && function_exists( 'hestia_hex_rgba' ) ) {
 		$custom_css .= '
 			.hestia-scroll-to-top,

@@ -27,7 +27,7 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 			$wp_customize,
 			'jinsy_magazine_magazine_layout',
 			array(
-				'label'    => __( 'Enable Magazine Layout', 'jinsy-magazine' ),
+				'label'    => esc_html__( 'Enable Magazine Layout', 'jinsy-magazine' ),
 				'section'  => 'hestia_blog_layout',
 				'type'     => 'checkbox',
 				'priority' => 26,
