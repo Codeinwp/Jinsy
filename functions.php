@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-define( 'JINSY_MAGAZINE_VERSION', '1.0.1' );
+define( 'JINSY_MAGAZINE_VERSION', '1.0.2' );
 
 $vendor_file = trailingslashit( get_stylesheet_directory() ) . 'vendor/autoload.php';
 if ( is_readable( $vendor_file ) ) {
