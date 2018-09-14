@@ -14,7 +14,7 @@ if ( is_readable( $vendor_file ) ) {
 }
 add_filter(
 	'themeisle_sdk_products',
-    function ( $products ) {
+	function ( $products ) {
 		$products[] = get_stylesheet_directory() . '/style.css';
 		return $products;
 	}
