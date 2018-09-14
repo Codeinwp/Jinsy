@@ -1,4 +1,8 @@
 
+ ### v1.0.1 - 2018-09-14 
+ **Changes:** 
+ * Update Travis
+ 
  ### v1.0.0 - 2018-09-13 
  **Changes:** 
  * Fix deploy system

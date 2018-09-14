@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Jinsy Magazine 1.0.0\n"
+"Project-Id-Version: Jinsy Magazine 1.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/jinsy-magazine/issues\n"
-"POT-Creation-Date: 2018-09-13 11:40:01+00:00\n"
+"POT-Creation-Date: 2018-09-14 09:11:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,11 +24,11 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:232 functions.php:236
+#: functions.php:233 functions.php:237
 msgid "About Jinsy Magazine"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:242
 #. translators: s - theme name
 msgid "Welcome to %s! - Version "
 msgstr ""
