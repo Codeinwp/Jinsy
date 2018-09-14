@@ -21,7 +21,7 @@ module.exports = {
 	},
 	functions: {
 		options: {
-			prefix: 'JINSY_VERSION\', \''
+			prefix: 'JINSY_MAGAZINE_VERSION\', \''
 		},
 		src: 'functions.php'
 	},
