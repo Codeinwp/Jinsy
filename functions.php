@@ -43,6 +43,10 @@ if ( file_exists( get_stylesheet_directory() . '/inc/magazine-layout.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/magazine-layout.php';
 }
 
+if ( file_exists( get_stylesheet_directory() . '/inc/blog-header.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/blog-header.php';
+}
+
 if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/inline-style.php';
 }
@@ -263,3 +267,82 @@ function jinsy_magazine_theme_setup() {
 }
 
 add_action( 'after_setup_theme', 'jinsy_magazine_theme_setup' );
+
+function jinsy_magazine_blog_header_structure() {
+
+}
+
+//function header_layout_markup() {
+//
+//	return 'classic-blog';
+//
+//}
+//
+//function jinsy_empty_content() {
+//	return '';
+//}
+
+function tmp() {
+
+	$disable_blog_header = get_theme_mod( 'jinsy_magazine_blog_header_layout', true );
+
+	if ( $disable_blog_header ) {
+
+		remove_all_actions( 'hestia_before_archive_content' );
+		$header_layout = new Hestia_Header_Layout_Manager();
+//		add_action( 'hestia_before_archive_content', array( $header_layout, 'post_page_header' ) );
+//		remove_all_actions( 'hestia_before_index_wrapper' );
+//		remove_all_actions( 'hestia_before_archive_content' );
+//		add_filter( 'hestia_header_layout', 'header_layout_markup' );
+//		add_filter( 'hestia_header_title_structure', 'jinsy_empty_content', 100 );
+//
+	}
+//	remove_all_actions( 'hestia_before_index_wrapper' );
+}
+add_action( 'init', 'tmp' );
+
+/**
+ * Add class on body tag to enable the third layout on blog-home and archive page
+ */
+function jinsy_magazine_header_layout_body_classes( $layout ) {
+	if( is_home() || is_archive() ){
+		return 'classic-blog';
+	}
+	return $layout;
+}
+add_filter( 'hestia_header_layout', 'jinsy_magazine_header_layout_body_classes', 30 );
+
+/**
+ * Add classes on wrapper element for enabling the third layout option
+ */
+function jinsy_header_layout_body_classes( $input ) {
+
+	if ( is_home() || ( is_archive() && ! is_woocommerce() ) ) {
+		return 'wrapper classic-blog';
+	}
+
+	return $input;
+}
+add_filter( 'hestia_page_wrapper_class', 'jinsy_header_layout_body_classes' );
+
+
+function zuzu() {
+//	if ( is_front_page() && is_home() ) {
+//		var_dump('latest posts');
+//		// Default homepage
+//	} elseif ( is_front_page() ) {
+//		var_dump('fp');
+//		// static homepage
+//	} elseif ( is_home() ) {
+//		var_dump('blog');
+//		// blog page
+//	} else {
+//		var_dump('altceva');
+//		//everything else
+//	}
+
+	var_dump( is_archive() );
+	var_dump( ( class_exists( 'WooCommerce' ) &&  is_product_category() ) );
+}
+add_action( 'wp_enqueue_scripts', 'zuzu' );
+
