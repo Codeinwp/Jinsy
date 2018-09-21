@@ -1,7 +1,7 @@
 {
   "name": "jinsy-magazine",
   "nicename": "Jinsy Magazine",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "category": "themes",
   "repository": {
     "type": "git",
@@ -31,8 +31,5 @@
     "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
     "grunt-version": "^1.1.1",
     "load-project-config": "~0.2.0"
-  },
-  "wraithSlug": [
-    "jinsy-magazine"
-  ]
+  }
 }

@@ -6,7 +6,19 @@
  * @since 1.0.0
  */
 
-define( 'JINSY_MAGAZINE_VERSION', '1.0.0' );
+define( 'JINSY_MAGAZINE_VERSION', '1.0.2' );
+
+$vendor_file = trailingslashit( get_stylesheet_directory() ) . 'vendor/autoload.php';
+if ( is_readable( $vendor_file ) ) {
+	require_once $vendor_file;
+}
+add_filter(
+	'themeisle_sdk_products',
+	function ( $products ) {
+		$products[] = get_stylesheet_directory() . '/style.css';
+		return $products;
+	}
+);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

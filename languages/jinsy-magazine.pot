@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jinsy Magazine 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/jinsy-magazine/issues\n"
-"POT-Creation-Date: 2018-09-05 14:48:49+00:00\n"
+"POT-Creation-Date: 2018-09-13 11:40:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,11 +24,11 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:132 functions.php:136
+#: functions.php:232 functions.php:236
 msgid "About Jinsy Magazine"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:241
 #. translators: s - theme name
 msgid "Welcome to %s! - Version "
 msgstr ""
@@ -50,12 +50,16 @@ msgid ""
 "and a lightweight interface. Moreover, it was built with SEO in mind."
 msgstr ""
 
+#: inc/magazine-layout.php:30
+msgid "Enable Magazine Layout"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Jinsy Magazine"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://themeisle.com/themes/jinsy/"
+msgid "https://themeisle.com/themes/jinsy-magazine/"
 msgstr ""
 
 #. Author of the plugin/theme
