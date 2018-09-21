@@ -85,6 +85,14 @@ function jinsy_magazine_boxed_layout_default() {
 add_action( 'after_switch_theme', 'jinsy_magazine_boxed_layout_default' );
 
 /**
+ * Default header alignment - center
+ */
+function jinsy_magazine_header_alignemnt_default() {
+	return 'center';
+}
+add_filter( 'hestia_header_alignment_default', 'jinsy_magazine_header_alignemnt_default' );
+
+/**
  * Default padding for buttons styling
  */
 function jinsy_magazine_button_padding_dimension_default() {
@@ -159,14 +167,6 @@ function jinsy_magazine_enable_scroll_to_top() {
 	set_theme_mod( 'hestia_enable_scroll_to_top', true );
 }
 add_action( 'after_switch_theme', 'jinsy_magazine_enable_scroll_to_top' );
-
-/**
- * Enable very top bar
- */
-function jinsy_magazine_enable_very_top_bar() {
-	set_theme_mod( 'hestia_top_bar_hide', false );
-}
-add_action( 'after_switch_theme', 'jinsy_magazine_enable_very_top_bar' );
 
 /**
  * Import options from Hestia
