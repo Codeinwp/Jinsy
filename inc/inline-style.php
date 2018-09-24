@@ -45,21 +45,6 @@ function jinsy_magazine_inline_style() {
 		';
 	}
 
-	/* Disable Blog Header */
-//	$disable_blog_header = get_theme_mod( 'jinsy_magazine_blog_header_layout', true );
-
-//	if ( $disable_blog_header ) {
-//		$custom_css .= '
-//			.blog .page-header {
-//				min-height: 0;
-//			}
-//			.blog .page-header .container {
-//				padding-top: 0px !important;
-//				padding-bottom: 0px;
-//			}
-//		';
-//	}
-
 	wp_add_inline_style( 'hestia_style', $custom_css );
 }
 
