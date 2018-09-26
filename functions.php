@@ -98,7 +98,7 @@ add_filter( 'hestia_header_alignment_default', 'jinsy_magazine_header_alignemnt_
 function jinsy_magazine_header_layout_default() {
 	return 'classic-blog';
 }
-add_filter( 'hestia_header_layout', 'jinsy_magazine_header_layout_default' );
+add_filter( 'hestia_header_layout_default', 'jinsy_magazine_header_layout_default' );
 
 /**
  * Default padding for buttons styling
