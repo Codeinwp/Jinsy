@@ -93,6 +93,14 @@ function jinsy_magazine_header_alignemnt_default() {
 add_filter( 'hestia_header_alignment_default', 'jinsy_magazine_header_alignemnt_default' );
 
 /**
+ * Default header layout - classic blog, featured image under the title
+ */
+function jinsy_magazine_header_layout_default() {
+	return 'classic-blog';
+}
+add_filter( 'hestia_header_layout', 'jinsy_magazine_header_layout_default' );
+
+/**
  * Default padding for buttons styling
  */
 function jinsy_magazine_button_padding_dimension_default() {
