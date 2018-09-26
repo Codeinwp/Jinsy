@@ -19,7 +19,7 @@ function jinsy_magazine_inline_style() {
 			.hestia-scroll-to-top,
 			.hestia-scroll-to-top:hover,
 			.hestia-scroll-to-top:focus, 
-			.hestia-scroll-to-top:active, {
+			.hestia-scroll-to-top:active {
 				background-color: ' . esc_html( $accent_color ) . ';
 			}
 		';
