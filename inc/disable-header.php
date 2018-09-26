@@ -64,6 +64,7 @@ function jinsy_magazine_disable_header() {
 
 	if ( $disable_header ) {
 		add_filter( 'theme_mod_hestia_header_layout', 'jinsy_magazine_third_header_layout' );
+		remove_all_actions( 'hestia_before_index_content' );
 	} else {
 		remove_filter( 'theme_mod_hestia_header_layout', 'jinsy_magazine_third_header_layout' );
 	}
