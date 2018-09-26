@@ -47,10 +47,6 @@ if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/inline-style.php';
 }
 
-if ( file_exists( get_stylesheet_directory() . '/inc/disable-header.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/disable-header.php';
-}
-
 /**
  * Default accent color
  */
