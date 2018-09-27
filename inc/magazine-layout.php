@@ -38,13 +38,13 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 	$object = $wp_customize->get_control( 'hestia_alternative_blog_layout' );
 
 	if ( ! empty( $object ) ) {
-		$object->active_callback = 'magazine_layout_active_callback';
+		$object->active_callback = 'jinsy_magazine_magazine_layout_active_callback';
 	}
 
 	$object = $wp_customize->get_control( 'hestia_pagination_type' );
 
 	if ( ! empty( $object ) ) {
-		$object->active_callback = 'magazine_layout_active_callback';
+		$object->active_callback = 'jinsy_magazine_magazine_layout_active_callback';
 	}
 }
 
@@ -53,7 +53,7 @@ function jinsy_magazine_customize_register( $wp_customize ) {
  *
  * @return bool
  */
-function magazine_layout_active_callback() {
+function jinsy_magazine_magazine_layout_active_callback() {
 	if ( get_theme_mod( 'jinsy_magazine_magazine_layout', true ) === true ) {
 		return false;
 	}
