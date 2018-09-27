@@ -79,10 +79,10 @@ add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_deafult' );
  * Default boxed-layout
  */
 function jinsy_magazine_boxed_layout_default() {
-	set_theme_mod( 'hestia_general_layout', 0 );
+	return 0;
 }
 
-add_action( 'after_switch_theme', 'jinsy_magazine_boxed_layout_default' );
+add_filter( 'hestia_boxed_layout_default', 'jinsy_magazine_boxed_layout_default' );
 
 /**
  * Default header alignment - center
