@@ -123,10 +123,10 @@ add_filter( 'hestia_buttons_border_radius_default', 'jinsy_magazine_buttons_bord
  * Default background type for Big Title section
  */
 function jinsy_magazine_big_title_background_default() {
-	set_theme_mod( 'hestia_slider_type', 'parallax' );
+	return 'parallax';
 }
 
-add_action( 'after_switch_theme', 'jinsy_magazine_big_title_background_default' );
+add_filter( 'hestia_slider_type_default', 'jinsy_magazine_big_title_background_default' );
 
 /**
  * Default image for parallax layer1 in Big Title section background
