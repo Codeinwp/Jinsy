@@ -164,9 +164,9 @@ add_action( 'header_overlay_color', 'jinsy_magazine_header_overlay_color_default
  * Enable scroll to top by default
  */
 function jinsy_magazine_enable_scroll_to_top() {
-	set_theme_mod( 'hestia_enable_scroll_to_top', true );
+	return true;
 }
-add_action( 'after_switch_theme', 'jinsy_magazine_enable_scroll_to_top' );
+add_filter( 'hestia_scroll_to_top_default', 'jinsy_magazine_enable_scroll_to_top' );
 
 /**
  * Import options from Hestia
