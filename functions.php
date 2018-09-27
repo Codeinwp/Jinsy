@@ -43,10 +43,6 @@ if ( file_exists( get_stylesheet_directory() . '/inc/magazine-layout.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/magazine-layout.php';
 }
 
-if ( file_exists( get_stylesheet_directory() . '/inc/blog-header.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/blog-header.php';
-}
-
 if ( file_exists( get_stylesheet_directory() . '/inc/inline-style.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/inline-style.php';
 }

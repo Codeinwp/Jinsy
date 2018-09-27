@@ -97,6 +97,13 @@ function jinsy_magazine_pagination_type() {
 }
 
 /**
+ * Set classic blog for header layout while magazine layout is enabled
+ */
+function jinsy_magazine_classic_blog_header_layout() {
+	return 'classic-blog';
+}
+
+/**
  * Magazine layout
  */
 function jinsy_magazine_enable_magazine_layout() {
@@ -108,6 +115,8 @@ function jinsy_magazine_enable_magazine_layout() {
 		add_filter( 'theme_mod_hestia_grid_layout', 'jinsy_magazine_grid_layout_columns' );
 		add_filter( 'theme_mod_hestia_enable_masonry', 'jinsy_magazine_enable_masonry' );
 		add_filter( 'theme_mod_hestia_pagination_type', 'jinsy_magazine_pagination_type' );
+		add_filter( 'hestia_header_layout', 'jinsy_magazine_classic_blog_header_layout' );
+		remove_all_actions( 'hestia_before_index_content' );
 	} else {
 		remove_filter( 'theme_mod_hestia_alternative_blog_layout', 'jinsy_magazine_grid_layout' );
 		remove_filter( 'theme_mod_hestia_grid_layout', 'jinsy_magazine_grid_layout_columns' );

@@ -45,6 +45,22 @@ function jinsy_magazine_inline_style() {
 		';
 	}
 
+	/* Hide Blog page title when Magazine Layout is enabled */
+	$magazine_layout_enabled = get_theme_mod( 'jinsy_magazine_magazine_layout', true );
+	if ( $magazine_layout_enabled ) {
+		$custom_css .= '
+			.blog .title-in-content {
+				display: none;
+			}
+		';
+	} else {
+		$custom_css .= '
+			.blog .title-in-content {
+				display: block;
+			}
+		';
+	}
+
 	wp_add_inline_style( 'hestia_style', $custom_css );
 }
 
