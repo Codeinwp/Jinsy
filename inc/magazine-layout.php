@@ -57,55 +57,23 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'jinsy_magazine_customize_register', 100 );
 
 /**
- * Determine if hide blog title control should be available or not
- * depending on the header_layout control
- */
-function jinsy_magazine_allow_hiding_blog_title() {
-
-	$header_layout_customizer_option = get_theme_mod( 'hestia_header_layout', 'default' );
-	$static_blog_page_id             = get_option( 'page_for_posts' );
-	$static_blog_page_meta           = get_post_meta( $static_blog_page_id );
-	if ( ! empty( $static_blog_page_meta['hestia_header_layout'] ) ) {
-		$static_blog_meta_layout = $static_blog_page_meta['hestia_header_layout'];
-	}
-
-	/**
-	 * Blog page, static page
-	 */
-	if ( is_home() && ! is_front_page() ) {
-		if ( ! empty( $static_blog_meta_layout ) && $static_blog_meta_layout !== 'default' ) {
-			update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
-			return;
-		}
-		if ( $header_layout_customizer_option !== 'default' ) {
-			update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
-			return;
-		}
-	}
-
-	/**
-	 * Your Latest Posts
-	 */
-	if ( is_home() && is_front_page() && ( $header_layout_customizer_option !== 'default' ) ) {
-		update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
-		return;
-	}
-
-	update_option( 'jinsy_magazine_hide_blog_title', 'no' );
-	return;
-
-}
-add_action( 'wp_enqueue_scripts', 'jinsy_magazine_allow_hiding_blog_title', 0 );
-
-/**
  * Active callback for hide blog title control
  */
 function jinsy_magazine_hide_blog_title_active_callback() {
 
-	if ( get_option( 'jinsy_magazine_hide_blog_title' ) === 'no' ) {
-		return false;
+	$static_blog_page_id   = get_option( 'page_for_posts' );
+	$static_blog_page_meta = get_post_meta( $static_blog_page_id );
+	$header_layout_control = get_theme_mod( 'hestia_header_layout', 'default' );
+
+	if ( ( ! empty( $static_blog_page_meta['hestia_header_layout'] ) ) && ( $static_blog_page_meta['hestia_header_layout'][0] !== 'default' ) ) {
+		return true;
 	}
-	return true;
+
+	if ( $header_layout_control !== 'default' ) {
+		return true;
+	}
+
+	return false;
 }
 
 /**
