@@ -36,8 +36,10 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 	);
 
 	if ( jinsy_magazine_pro() ) {
-		$magazine_layout_control        = $wp_customize->get_control( 'jinsy_magazine_magazine_layout' );
-		$magazine_layout_control->label = esc_html__( 'Disable Blog Header', 'jinsy-magazine' );
+		$magazine_layout_control                  = $wp_customize->get_control( 'jinsy_magazine_magazine_layout' );
+		$magazine_layout_control->label           = esc_html__( 'Hide Blog Title', 'jinsy-magazine' );
+		$magazine_layout_control->active_callback = 'jinsy_magazine_hide_blog_title_active_callback';
+
 	} else {
 		$object = $wp_customize->get_control( 'hestia_alternative_blog_layout' );
 
@@ -53,6 +55,58 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'jinsy_magazine_customize_register', 100 );
+
+/**
+ * Determine if hide blog title control should be available or not
+ * depending on the header_layout control
+ */
+function jinsy_magazine_allow_hiding_blog_title() {
+
+	$header_layout_customizer_option = get_theme_mod( 'hestia_header_layout', 'default' );
+	$static_blog_page_id             = get_option( 'page_for_posts' );
+	$static_blog_page_meta           = get_post_meta( $static_blog_page_id );
+	if ( ! empty( $static_blog_page_meta['hestia_header_layout'] ) ) {
+		$static_blog_meta_layout = $static_blog_page_meta['hestia_header_layout'];
+	}
+
+	/**
+	 * Blog page, static page
+	 */
+	if ( is_home() && ! is_front_page() ) {
+		if ( ! empty( $static_blog_meta_layout ) && $static_blog_meta_layout !== 'default' ) {
+			update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
+			return;
+		}
+		if ( $header_layout_customizer_option !== 'default' ) {
+			update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
+			return;
+		}
+	}
+
+	/**
+	 * Your Latest Posts
+	 */
+	if ( is_home() && is_front_page() && ( $header_layout_customizer_option !== 'default' ) ) {
+		update_option( 'jinsy_magazine_hide_blog_title', 'yes' );
+		return;
+	}
+
+	update_option( 'jinsy_magazine_hide_blog_title', 'no' );
+	return;
+
+}
+add_action( 'wp_enqueue_scripts', 'jinsy_magazine_allow_hiding_blog_title', 0 );
+
+/**
+ * Active callback for hide blog title control
+ */
+function jinsy_magazine_hide_blog_title_active_callback() {
+
+	if ( get_option( 'jinsy_magazine_hide_blog_title' ) === 'no' ) {
+		return false;
+	}
+	return true;
+}
 
 /**
  * Hide blog layout controls when magazine layout is enabled
