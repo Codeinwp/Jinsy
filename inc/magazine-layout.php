@@ -37,7 +37,7 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 
 	if ( jinsy_magazine_pro() ) {
 		$magazine_layout_control        = $wp_customize->get_control( 'jinsy_magazine_magazine_layout' );
-		$magazine_layout_control->label = esc_html( 'Disable Blog Header', 'jinsy-magazine' );
+		$magazine_layout_control->label = esc_html__( 'Disable Blog Header', 'jinsy-magazine' );
 	} else {
 		$object = $wp_customize->get_control( 'hestia_alternative_blog_layout' );
 
