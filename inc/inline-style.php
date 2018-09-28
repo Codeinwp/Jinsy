@@ -14,10 +14,28 @@ function jinsy_magazine_inline_style() {
 
 	$custom_css = '';
 
+	if ( ! jinsy_magazine_pro() ) {
+		/**
+		 * Very top bar background color
+		 */
+		if ( ! empty( $accent_color ) ) {
+			$custom_css .= '
+			.hestia-top-bar {
+				background-color: ' . esc_html( $accent_color ) . ';
+			}
+		';
+		}
+	}
+
+	/**
+	 * Scroll to top button background-color and box-shadow
+	 */
 	if ( ! empty( $accent_color ) && function_exists( 'hestia_hex_rgba' ) ) {
 		$custom_css .= '
 			.hestia-scroll-to-top,
-			.hestia-scroll-to-top:hover {
+			.hestia-scroll-to-top:hover,
+			.hestia-scroll-to-top:focus, 
+			.hestia-scroll-to-top:active {
 				background-color: ' . esc_html( $accent_color ) . ';
 			}
 		';
@@ -35,17 +53,23 @@ function jinsy_magazine_inline_style() {
 		';
 	}
 
-	if ( ! empty( $accent_color ) ) {
+	/* Hide Blog page title when Magazine Layout is enabled */
+	$magazine_layout_enabled = get_theme_mod( 'jinsy_magazine_magazine_layout', true );
+	if ( $magazine_layout_enabled ) {
 		$custom_css .= '
-			.hestia-top-bar {
-				background-color: ' . esc_html( $accent_color ) . ';
+			.blog .title-in-content {
+				display: none;
+			}
+		';
+	} else {
+		$custom_css .= '
+			.blog .title-in-content {
+				display: block;
 			}
 		';
 	}
 
 	wp_add_inline_style( 'hestia_style', $custom_css );
 }
+add_action( 'wp_enqueue_scripts', 'jinsy_magazine_inline_style', 20 );
 
-if ( wp_get_theme()->Template === 'hestia' ) {
-	add_action( 'wp_enqueue_scripts', 'jinsy_magazine_inline_style', 20 );
-}

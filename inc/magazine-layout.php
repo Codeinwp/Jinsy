@@ -35,17 +35,54 @@ function jinsy_magazine_customize_register( $wp_customize ) {
 		)
 	);
 
-	$object = $wp_customize->get_control( 'hestia_alternative_blog_layout' );
+	if ( jinsy_magazine_pro() ) {
+		$magazine_layout_control                  = $wp_customize->get_control( 'jinsy_magazine_magazine_layout' );
+		$magazine_layout_control->label           = esc_html__( 'Hide Blog Title', 'jinsy-magazine' );
+		$magazine_layout_control->active_callback = 'jinsy_magazine_hide_blog_title_active_callback';
 
-	if ( ! empty( $object ) ) {
-		$object->active_callback = 'magazine_layout_active_callback';
+	} else {
+		$object = $wp_customize->get_control( 'hestia_alternative_blog_layout' );
+
+		if ( ! empty( $object ) ) {
+			$object->active_callback = 'jinsy_magazine_magazine_layout_active_callback';
+		}
+
+		$object = $wp_customize->get_control( 'hestia_pagination_type' );
+
+		if ( ! empty( $object ) ) {
+			$object->active_callback = 'jinsy_magazine_magazine_layout_active_callback';
+		}
+	}
+}
+add_action( 'customize_register', 'jinsy_magazine_customize_register', 100 );
+
+/**
+ * Active callback for hide blog title control
+ */
+function jinsy_magazine_hide_blog_title_active_callback() {
+
+	$header_layout_control = get_theme_mod( 'hestia_header_layout', 'default' );
+	$posts_or_page         = get_option( 'show_on_front' );
+	$static_blog_page_id   = get_option( 'page_for_posts' );
+
+	if ( $posts_or_page == 'page' ) {
+		if ( $static_blog_page_id ) {
+			$static_blog_page_meta = get_post_meta( $static_blog_page_id );
+
+			if ( ! empty( $static_blog_page_meta['hestia_header_layout'] ) && ! empty( $static_blog_page_meta['hestia_header_layout'][0] ) ) {
+				if ( $static_blog_page_meta['hestia_header_layout'][0] == 'default' ) {
+					return false;
+				}
+				return true;
+			}
+		}
 	}
 
-	$object = $wp_customize->get_control( 'hestia_pagination_type' );
-
-	if ( ! empty( $object ) ) {
-		$object->active_callback = 'magazine_layout_active_callback';
+	if ( $header_layout_control == 'default' ) {
+		return false;
 	}
+
+	return true;
 }
 
 /**
@@ -53,7 +90,7 @@ function jinsy_magazine_customize_register( $wp_customize ) {
  *
  * @return bool
  */
-function magazine_layout_active_callback() {
+function jinsy_magazine_magazine_layout_active_callback() {
 	if ( get_theme_mod( 'jinsy_magazine_magazine_layout', true ) === true ) {
 		return false;
 	}
@@ -97,26 +134,26 @@ function jinsy_magazine_pagination_type() {
 }
 
 /**
+ * Set classic blog for header layout while magazine layout is enabled
+ */
+function jinsy_magazine_classic_blog_header_layout() {
+	return 'classic-blog';
+}
+
+/**
  * Magazine layout
  */
 function jinsy_magazine_enable_magazine_layout() {
 
 	$enable_magazine_layout = get_theme_mod( 'jinsy_magazine_magazine_layout', true );
 
-	if ( $enable_magazine_layout ) {
+	if ( $enable_magazine_layout && ! jinsy_magazine_pro() ) {
 		add_filter( 'theme_mod_hestia_alternative_blog_layout', 'jinsy_magazine_grid_layout' );
 		add_filter( 'theme_mod_hestia_grid_layout', 'jinsy_magazine_grid_layout_columns' );
 		add_filter( 'theme_mod_hestia_enable_masonry', 'jinsy_magazine_enable_masonry' );
 		add_filter( 'theme_mod_hestia_pagination_type', 'jinsy_magazine_pagination_type' );
-	} else {
-		remove_filter( 'theme_mod_hestia_alternative_blog_layout', 'jinsy_magazine_grid_layout' );
-		remove_filter( 'theme_mod_hestia_grid_layout', 'jinsy_magazine_grid_layout_columns' );
-		remove_filter( 'theme_mod_hestia_enable_masonry', 'jinsy_magazine_enable_masonry' );
-		remove_filter( 'theme_mod_hestia_pagination_type', 'jinsy_magazine_pagination_type' );
+		add_filter( 'hestia_header_layout', 'jinsy_magazine_classic_blog_header_layout' );
+		remove_all_actions( 'hestia_before_index_content' );
 	}
 }
-
-if ( wp_get_theme()->Template === 'hestia' ) {
-	add_action( 'wp', 'jinsy_magazine_enable_magazine_layout', 0 );
-	add_action( 'customize_register', 'jinsy_magazine_customize_register', 100 );
-}
+add_action( 'wp', 'jinsy_magazine_enable_magazine_layout', 0 );

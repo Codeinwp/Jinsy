@@ -45,7 +45,8 @@
 }
 
 /* Blog posts images */
-.blog .blog-posts-wrap .card.card-blog.card-plain .card-image {
+.blog .blog-posts-wrap .card.card-blog.card-plain .card-image,
+.blog .blog-posts-wrap .card-blog.card-plain .card-image {
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
 
