@@ -14,7 +14,7 @@ Requires License:     no
 Tags: blog, custom-logo, portfolio, e-commerce, rtl-language-support, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, left-sidebar, right-sidebar, footer-widgets
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others. 
+Use it to make something cool, have fun, and share what you've learned with others.
 
 */
 /*--------------------------------------------------------------
@@ -154,7 +154,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 /* Blog posts images */
-.blog .blog-posts-wrap .card.card-blog.card-plain .card-image {
+.blog .blog-posts-wrap .card.card-blog.card-plain .card-image,
+.blog .blog-posts-wrap .card-blog.card-plain .card-image {
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
