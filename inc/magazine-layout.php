@@ -61,8 +61,10 @@ add_action( 'customize_register', 'jinsy_magazine_customize_register', 100 );
  */
 function jinsy_magazine_hide_blog_title_active_callback() {
 
-	$static_blog_page_id   = get_option( 'page_for_posts' );
-	$static_blog_page_meta = get_post_meta( $static_blog_page_id );
+	$static_blog_page_id = get_option( 'page_for_posts' );
+	if ( ! empty( $static_blog_page_id ) ) {
+		$static_blog_page_meta = get_post_meta( $static_blog_page_id );
+	}
 	$header_layout_control = get_theme_mod( 'hestia_header_layout', 'default' );
 
 	if ( ( ! empty( $static_blog_page_meta['hestia_header_layout'] ) ) && ( $static_blog_page_meta['hestia_header_layout'][0] !== 'default' ) ) {
