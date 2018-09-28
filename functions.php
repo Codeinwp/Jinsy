@@ -39,6 +39,16 @@ if ( ! function_exists( 'jinsy_magazine_parent_css' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'jinsy_magazine_parent_css', 10 );
 
+/**
+ * Check if parent theme is Hestia Pro
+ */
+function jinsy_magazine_pro() {
+	if ( wp_get_theme()->Template === 'hestia-pro' ) {
+		return true;
+	}
+	return false;
+}
+
 if ( file_exists( get_stylesheet_directory() . '/inc/magazine-layout.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/magazine-layout.php';
 }
