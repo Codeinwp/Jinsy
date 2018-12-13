@@ -1,4 +1,8 @@
 
+ ### v1.0.4 - 2018-12-13 
+ **Changes:** 
+ * Update .distignore
+ 
  ### v1.0.3 - 2018-09-28 
  **Changes:** 
  * Code review
