@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Jinsy Magazine 1.0.0\n"
+"Project-Id-Version: Jinsy Magazine 1.0.3\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/jinsy-magazine/issues\n"
-"POT-Creation-Date: 2018-09-13 11:40:01+00:00\n"
+"POT-Creation-Date: 2018-09-28 21:58:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,11 +24,11 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:232 functions.php:236
+#: functions.php:251 functions.php:255
 msgid "About Jinsy Magazine"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:260
 #. translators: s - theme name
 msgid "Welcome to %s! - Version "
 msgstr ""
@@ -52,6 +52,10 @@ msgstr ""
 
 #: inc/magazine-layout.php:30
 msgid "Enable Magazine Layout"
+msgstr ""
+
+#: inc/magazine-layout.php:40
+msgid "Hide Blog Title"
 msgstr ""
 
 #. Theme Name of the plugin/theme
