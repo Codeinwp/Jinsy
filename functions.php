@@ -78,12 +78,12 @@ add_filter( 'hestia_header_gradient_default', 'jinsy_magazine_header_gradient_de
 /**
  * Default font
  */
-function jinsy_magazine_font_deafult() {
+function jinsy_magazine_font_default() {
 	return 'Open Sans';
 }
 
-add_filter( 'hestia_headings_default', 'jinsy_magazine_font_deafult' );
-add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_deafult' );
+add_filter( 'hestia_headings_default', 'jinsy_magazine_font_default' );
+add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_default' );
 
 /**
  * Default boxed-layout
