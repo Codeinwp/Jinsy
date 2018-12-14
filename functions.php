@@ -86,6 +86,25 @@ add_filter( 'hestia_headings_default', 'jinsy_magazine_font_default' );
 add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_default' );
 
 /**
+ * Default font in customizer preview
+ *
+ * @param object $wp_customize the customizer manager.
+ */
+function jinsy_magazine_customizer_font_default( $wp_customize ) {
+
+	$jinsy_magazine_headings_font = $wp_customize->get_setting( 'hestia_headings_font' );
+	if ( ! empty( $jinsy_magazine_headings_font ) ) {
+		$jinsy_magazine_headings_font->default = jinsy_magazine_font_default();
+	}
+
+	$jinsy_magazine_body_font = $wp_customize->get_setting( 'hestia_body_font' );
+	if ( ! empty( $jinsy_magazine_body_font ) ) {
+		$jinsy_magazine_body_font->default = jinsy_magazine_font_default();
+	}
+}
+add_action( 'customize_register', 'jinsy_magazine_customizer_font_default', 99 );
+
+/**
  * Default boxed-layout
  */
 function jinsy_magazine_boxed_layout_default() {
