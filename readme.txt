@@ -56,6 +56,8 @@ Jinsy Magazine is distributed under the terms of the GNU GPLv2 or later
 
 = Images =
 License: All mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+* parallax_layer1.jpg, CC0, self-made
+* parallax_layer2.jpg, CC0, self-made
 * vintage-car, CC0, https://mystock.themeisle.com/photo/vintage-car/
 * photographer-3, CC0, https://mystock.themeisle.com/photo/photographer-3/
 * volkswagen-vanagon, CC0, https://mystock.themeisle.com/photo/volkswagen-vanagon/
