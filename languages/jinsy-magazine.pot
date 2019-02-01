@@ -1,14 +1,14 @@
-# Copyright (C) 2018 ThemeIsle
+# Copyright (C) 2019 ThemeIsle
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Jinsy Magazine 1.0.4\n"
+"Project-Id-Version: Jinsy Magazine 1.0.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/jinsy-magazine/issues\n"
-"POT-Creation-Date: 2018-12-13 17:41:16+00:00\n"
+"POT-Creation-Date: 2019-01-03 09:29:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Themeisle Translate Team <friends@themeisle.com>\n"
 "Language-Team: Themeisle Translate <friends@themeisle.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -24,11 +24,12 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:251 functions.php:255
+#: dist/jinsy-magazine/functions.php:270 dist/jinsy-magazine/functions.php:274
+#: functions.php:270 functions.php:274
 msgid "About Jinsy Magazine"
 msgstr ""
 
-#: functions.php:260
+#: dist/jinsy-magazine/functions.php:279 functions.php:279
 #. translators: s - theme name
 msgid "Welcome to %s! - Version "
 msgstr ""
@@ -50,11 +51,11 @@ msgid ""
 "and a lightweight interface. Moreover, it was built with SEO in mind."
 msgstr ""
 
-#: inc/magazine-layout.php:30
+#: dist/jinsy-magazine/inc/magazine-layout.php:30 inc/magazine-layout.php:30
 msgid "Enable Magazine Layout"
 msgstr ""
 
-#: inc/magazine-layout.php:40
+#: dist/jinsy-magazine/inc/magazine-layout.php:40 inc/magazine-layout.php:40
 msgid "Hide Blog Title"
 msgstr ""
 

@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-define( 'JINSY_MAGAZINE_VERSION', '1.0.4' );
+define( 'JINSY_MAGAZINE_VERSION', '1.0.5' );
 
 $vendor_file = trailingslashit( get_stylesheet_directory() ) . 'vendor/autoload.php';
 if ( is_readable( $vendor_file ) ) {
@@ -78,12 +78,33 @@ add_filter( 'hestia_header_gradient_default', 'jinsy_magazine_header_gradient_de
 /**
  * Default font
  */
-function jinsy_magazine_font_deafult() {
+function jinsy_magazine_font_default() {
 	return 'Open Sans';
 }
 
-add_filter( 'hestia_headings_default', 'jinsy_magazine_font_deafult' );
-add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_deafult' );
+add_filter( 'hestia_headings_default', 'jinsy_magazine_font_default' );
+add_filter( 'hestia_body_font_default', 'jinsy_magazine_font_default' );
+
+/**
+ * Default font in customizer preview
+ *
+ * @param object $wp_customize the customizer manager.
+ */
+function jinsy_magazine_customizer_font_default( $wp_customize ) {
+
+	$jinsy_magazine_font_default = jinsy_magazine_font_default();
+
+	$jinsy_magazine_headings_font = $wp_customize->get_setting( 'hestia_headings_font' );
+	if ( ! empty( $jinsy_magazine_headings_font ) ) {
+		$jinsy_magazine_headings_font->default = $jinsy_magazine_font_default;
+	}
+
+	$jinsy_magazine_body_font = $wp_customize->get_setting( 'hestia_body_font' );
+	if ( ! empty( $jinsy_magazine_body_font ) ) {
+		$jinsy_magazine_body_font->default = $jinsy_magazine_font_default;
+	}
+}
+add_action( 'customize_register', 'jinsy_magazine_customizer_font_default', 99 );
 
 /**
  * Default boxed-layout

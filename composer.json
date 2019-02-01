@@ -1,12 +1,6 @@
 {
   "name": "codeinwp/jinsy-magazine",
   "description": "Jinsy Magazine by ThemeIsle.",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Codeinwp/themeisle-sdk"
-    }
-  ],
   "homepage": "https://themeisle.com/themes/jinsy-magazine/",
   "license": "GPL-2.0+",
   "authors": [
@@ -24,7 +18,7 @@
   },
   "type": "wordpress-theme",
   "require": {
-    "codeinwp/themeisle-sdk": "master"
+    "codeinwp/themeisle-sdk": "^3.0"
   },
   "autoload": {
     "files": [
