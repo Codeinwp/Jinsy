@@ -1,4 +1,8 @@
 
+ ### v1.0.5 - 2019-02-01 
+ **Changes:** 
+ * Updated screenshot and readme file
+ 
  ### v1.0.4 - 2018-12-13 
  **Changes:** 
  * Update .distignore
